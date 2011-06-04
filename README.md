@@ -77,7 +77,12 @@ Quietly extract JSON metadata contained within DOM elements.
 Please view the source code of this link: http://labs.xddnet.com/yui-metadata/example/example.html
 
 ----
-### Contact
+### License
 
-Feedback and suggestions are always welcome, you can reach me at tszming at gmail dot com.    
+Copyright (c) 2006 John Resig, Yehuda Katz, Jorn Zaefferer, Paul McLanahan
 
+Ported to YUI from jQuery by tszming (tszming@gmail.com)
+
+Dual licensed under the MIT and GPL licenses:
+http://www.opensource.org/licenses/mit-license.php
+http://www.gnu.org/licenses/gpl.html
