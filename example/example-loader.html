@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Examples</title>
+	<style type="text/css">
+        body {font-family:arial}
+	</style>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/yuiloader/yuiloader-min.js" ></script>
+    <script type="text/javascript">
+
+        var loader = new YAHOO.util.YUILoader({
+
+            onSuccess: function() {
+
+                var dom = YAHOO.util.Dom;
+                var metadata = YAHOO.plugin.Metadata;
+                var str = "";
+
+                metadata.setType("class");
+                str += metadata.get( dom.get("one") ).item_id + ", " + metadata.get( dom.get("one") ).item_label + "\n";
+
+                metadata.setType("attr", "data");
+                str +=  metadata.get( dom.get("two") ).item_id + ", " + metadata.get( dom.get("two") ).item_label + "\n";
+
+                metadata.setType("elem", "script");
+                str += metadata.get( dom.get("three") ).item_id + ", " + metadata.get( dom.get("three") ).item_label + "\n";
+
+                alert(str);
+             }
+        });
+
+        loader.addModule({
+        	name: "metadata",
+        	type: "js",
+            fullpath: "http://yui-metadata.googlecode.com/svn/trunk/yui-metadata/metadata-min.js",
+            varName: "YAHOO.plugin.Metadata",
+        	requires: ['yahoo', 'dom']
+        });
+
+        loader.require("metadata");
+        loader.insert();
+
+    </script>
+
+</head>
+
+<body>
+
+<p id="one" class="some_class {item_id: 1, item_label: 'Label 1'}">This is p1</p>
+<p id="two" class="some_class" data="{item_id: 2, item_label: 'Label 2'}">This is p2</p>
+<p id="three" class="some_class"><script type= "text/javascript">{item_id: 3, item_label: 'Label 3'}</script>This is p3</p>
+
+</body>
+</html>
