@@ -70,12 +70,6 @@ Quietly extract JSON metadata contained within DOM elements.
         
         </script>
 
-
-----
-### Documentions and demo
-
-Please view the source code of this link: http://labs.xddnet.com/yui-metadata/example/example.html
-
 ----
 ### License
 
